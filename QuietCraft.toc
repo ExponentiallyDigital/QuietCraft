@@ -2,7 +2,7 @@
 ## Title: QuietCraft
 ## Notes: Filters out crafting messages from other players while keeping your own
 ## Author: ArcNineOhNine
-## Version: 0.0.4
+## Version: 0.0.6
 ## Category: ArcNineOhNine
 ## SavedVariables:
 
