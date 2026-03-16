@@ -1,21 +1,39 @@
--- QuietCraft: filters out crafting messages from other players while keeping your own
+-- QuietCraft: filters out crafting messages from others while keeping your own
 -- Author: arc909
--- Version: 0.0.1
+-- Version: 0.0.2
 
-local function FilterOtherCrafting(self, event, msg, sender)
-    -- If the sender is you, allow it
-    if sender == UnitName("player") then
+local playerName = UnitName("player")
+local craftPatterns = {
+    "creates",
+    "creates:",
+    "has created",
+    "has crafted",
+}
+
+local function FilterOtherCrafting(_, _, msg, sender)
+    if not sender or not msg then
         return false
     end
 
-    -- Block other players' crafting messages
-    if msg:find("creates") or msg:find("creates:") or msg:find("has created") or msg:find("has crafted") then
-        return true
+    if sender == playerName then
+        return false
+    end
+
+    -- single scan via pattern match table
+    local lowerMsg = msg:lower()
+    for _, token in ipairs(craftPatterns) do
+        if lowerMsg:find(token, 1, true) then
+            return true
+        end
     end
 
     return false
 end
 
--- Apply filter to both system channels that crafting messages use
-ChatFrame_AddMessageEventFilter("CHAT_MSG_TRADESKILLS", FilterOtherCrafting)
-ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", FilterOtherCrafting)
+-- apply no duplicate filter registration
+local function AddQuietCraftFilters()
+    ChatFrame_AddMessageEventFilter("CHAT_MSG_TRADESKILLS", FilterOtherCrafting)
+    ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", FilterOtherCrafting)
+end
+
+AddQuietCraftFilters()
