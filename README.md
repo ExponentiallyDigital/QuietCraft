@@ -6,7 +6,7 @@ An efficient, lightweight, high-performance World of Warcraft addon that hides a
 
 ## Why use this?
 
-**TL;DR** - enhanced chat panel peace and quiet in high population areas.
+<strong><span style="color:#ba372a">TL;DR</strong></span> <span style="color:#2dc26b">enhanced chat panel peace and quiet in high population areas.</span>
 
 ## Key features
 
