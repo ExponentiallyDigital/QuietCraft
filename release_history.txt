@@ -1,0 +1,36 @@
+— 2026-03-16 v0.0.7 TOC bump + automated release_history.txt via GitHub actions
+    .github/workflows/release.yml | 66 insertions, 3 deletions
+    QuietCraft.toc | 1 insertion, 1 deletion
+    README.md | 1 insertion, 1 deletion
+
+— 2026-03-16 v0.0.6 ADD logos
+    LICENSE | 674 insertions, 0 deletions
+    QuietCraft.toc | 1 insertion, 1 deletion
+    images/QuietCraft-logo-1024x1024.png | added
+    images/QuietCraft-logo-400x400.png | added
+
+— 2026-03-16 v0.0.5 cleanup LUA header comments
+    QuietCraft.lua | 0 insertions, 2 deletions
+
+— 2026-03-16 v0.0.4 ADD readme, ADD updated automated release yaml
+    .github/workflows/release.yml | 15 insertions, 8 deletions
+    QuietCraft.toc | 2 insertions, 2 deletions
+
+— 2026-03-16 added release.yml
+    .github/ISSUE_TEMPLATE/bug_report.md | 32 insertions, 0 deletions
+    .github/ISSUE_TEMPLATE/feature_request.md | 20 insertions, 0 deletions
+    .github/workflows/release.yml | 55 insertions, 0 deletions
+    README.md | 75 insertions, 0 deletions
+
+— 2026-03-16 v0.0.3 ADD optimised pattern matching
+    QuietCraft.7z | added
+    QuietCraft.lua | 4 insertions, 16 deletions
+    QuietCraft.toc | 3 insertions, 3 deletions
+
+— 2026-03-16 v0.0.2
+    QuietCraft.7z | added
+    QuietCraft.lua | 29 insertions, 11 deletions
+
+— 2026-01-29 Initial commit
+    QuietCraft.lua | 21 insertions, 0 deletions
+    QuietCraft.toc | 9 insertions, 0 deletions
