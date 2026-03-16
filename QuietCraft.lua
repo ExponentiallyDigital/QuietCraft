@@ -1,6 +1,4 @@
 -- QuietCraft: filters out crafting messages from others while keeping your own
--- Author: arc909
--- Version: 0.0.3
 
 local playerName = UnitName("player")
 local combinedPattern = "(creates:?)|has (created|crafted)"
