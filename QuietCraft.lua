@@ -1,19 +1,32 @@
 -- QuietCraft: filters out crafting messages from others while keeping your own
 
 local playerName = UnitName("player")
-local combinedPattern = "(creates:?)|has (created|crafted)"
 
-local function FilterOtherCrafting(_, _, msg, sender)
-    if not sender or not msg then
-        return false
-    end
-
-    if sender == playerName then
+local function FilterOtherCrafting(self, event, msg, sender)
+    if not msg then
         return false
     end
 
     local lowerMsg = msg:lower()
-    return lowerMsg:find(combinedPattern, 1, true)
+
+    -- keep all personal craft reports (e.g. "You create ...")
+    if lowerMsg:find("you create") then
+        return false
+    end
+
+    -- only apply filtering for tradeskill system messages
+    local isCraft = lowerMsg:find("creates:?") or lowerMsg:find("has created") or lowerMsg:find("has crafted")
+    if not isCraft then
+        return false
+    end
+
+    -- allow your own messages through
+    if sender and (sender == playerName or sender:match("^" .. playerName .. "%-")) then
+        return false
+    end
+
+    -- filter all other players' craft messages
+    return true
 end
 
 -- apply no duplicate filter registration
