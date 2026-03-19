@@ -1,3 +1,10 @@
+— 2026-03-16 v0.0.8 FIX regex
+    QuietCraft.lua | 19 insertions, 6 deletions
+    QuietCraft.toc | 1 insertion, 1 deletion
+
+— 2026-03-16 Update release_history.txt for v0.0.7
+    release_history.txt | 36 insertions, 0 deletions
+
 — 2026-03-16 v0.0.7 TOC bump + automated release_history.txt via GitHub actions
     .github/workflows/release.yml | 66 insertions, 3 deletions
     QuietCraft.toc | 1 insertion, 1 deletion
