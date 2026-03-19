@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+</head>
+<body>
+<h1 id="quietcraft">QuietCraft</h1>
+<p>Tired of chat flooding with &quot;So-and-so creates [Item]&quot; from everyone
+around you?</p>
+<p>An efficient, lightweight, high-performance World of Warcraft addon
+that hides all crafting notifications from other players while leaving
+your own crafting messages untouched.</p>
+<h2 id="why-use-this">Why use this?</h2>
+<p><strong><span style="color:#ba372a">TL;DR</strong></span>
+<span style="color:#2dc26b">enhanced chat panel peace and quiet in high
+population areas.</span></p>
+<h2 id="key-features">Key features</h2>
+<ul>
+<li><strong>Crafting spam filter:</strong> hides crafting messages from
+other players in your chat frames</li>
+<li><strong>Keeps your crafting messages:</strong> your own crafting
+notices are untouched so you can track your own progress</li>
+<li><strong>Lightweight and no config:</strong> works immediately after
+loading, no options needed</li>
+<li><strong>Applies to tradeskill + system chat:</strong> filters both
+<code>CHAT_MSG_TRADESKILLS</code> and <code>CHAT_MSG_SYSTEM</code></li>
+<li><strong>Safe and efficient:</strong> only inspects message text and
+sender, minimal runtime overhead</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<ol type="1">
+<li>Move/copy the <code>QuietCraft</code> folder to your
+<code>_retail_/Interface/AddOns/</code> directory</li>
+<li>Restart World of Warcraft or logout and login</li>
+</ol>
+<p>On load/login, the addon will supressing display of other people&#39;s
+crafting.</p>
+<h2 id="configuration">Configuration</h2>
+<p>The addon requires no set up.</p>
+<h2 id="technical-details">Technical details</h2>
+<ul>
+<li><strong>Chat filter-based:</strong> uses
+<code>ChatFrame_AddMessageEventFilter</code> to intercept and inspect
+incoming chat events.</li>
+<li><strong>Pattern matching:</strong> checks if a message contains
+crafting phrases like &quot;creates&quot;, &quot;created&quot;, or &quot;crafted&quot;.</li>
+<li><strong>Player-aware:</strong> preserves messages from the player
+themselves while filtering other players.</li>
+<li><strong>Tiny memory footprint:</strong> only a single function and a
+small, optimised regex pattern string, no tables or persistent
+state.</li>
+</ul>
+<h3 id="event-handling">Event handling</h3>
+<p><strong>QuietCraft</strong> listens to these default chat events:</p>
+<ul>
+<li><code>CHAT_MSG_TRADESKILLS</code>: filters other players’ tradeskill
+craft announcements</li>
+<li><code>CHAT_MSG_SYSTEM</code>: filters system-cast crafting
+notifications</li>
+</ul>
+<p>The filter function returns true (suppress) for other players’
+crafting messages and false (allow) for your own crafting spams and
+unrelated messages.</p>
+<h2 id="contributing">Contributing</h2>
+<p>Contributions to improve this tool are welcome! To contribute:</p>
+<ol type="1">
+<li>Fork the repository</li>
+<li>Create a feature branch</li>
+<li>Make your changes to the source code or documentation</li>
+<li>Test with various class configurations and buff scenarios</li>
+<li>Submit a pull request with a clear description of the
+improvements</li>
+</ol>
+<p>Please ensure your changes maintain compatibility with existing
+functionality and follows Lua best practices.</p>
+<h2 id="bugs-and-new-features">Bugs and new features</h2>
+<p>Found a bug or want to submit a feature request? <a href="https://github.com/ExponentiallyDigital/QuietCraft/issues">open an
+issue here</a></p>
+<h2 id="support">Support</h2>
+<p>This tool is unsupported and may cause objects in mirrors to be
+closer than they appear etc. Batteries not included.</p>
+<h2 id="license">License</h2>
+<p>This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by the
+Free Software Foundation, either version 3 of the License, or (at your
+option) any later version.</p>
+<p>This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+Public License for more details.</p>
+<p>You should have received a copy of the GNU General Public License
+along with this program. If not, see <a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>.</p>
+<p>Copyright (C) 2026 ArcNineOhNine</p>
+</body>
+</html>

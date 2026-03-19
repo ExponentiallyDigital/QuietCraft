@@ -1,9 +1,10 @@
-## Interface: 120000
+## Interface: 120001, 120000
 ## Title: QuietCraft
 ## Notes: Filters out crafting messages from other players while keeping your own
 ## Author: ArcNineOhNine
-## Version: 0.0.8
+## Version: 0.0.9
 ## Category: ArcNineOhNine
 ## SavedVariables:
+## IconTexture: Interface\AddOns\QuietCraft\media\QuietCraft-icon
 
 QuietCraft.lua
