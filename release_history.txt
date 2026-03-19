@@ -1,3 +1,15 @@
+— 2026-03-20 Merge branch 'master' of https://github.com/ExponentiallyDigital/QuietCraft
+
+— 2026-03-20 v0.0.9 TOC bump, ADD icon and logo files
+    QuietCraft.toc | 3 insertions, 2 deletions
+    README.html | 255 insertions, 0 deletions
+    media/QuietCraft-icon.blp | added
+    media/QuietCraft-icon.png | added
+    media/QuietCraft-logo.png | added
+
+— 2026-03-16 Update release_history.txt for v0.0.8
+    release_history.txt | 7 insertions, 0 deletions
+
 — 2026-03-16 v0.0.8 FIX regex
     QuietCraft.lua | 19 insertions, 6 deletions
     QuietCraft.toc | 1 insertion, 1 deletion
