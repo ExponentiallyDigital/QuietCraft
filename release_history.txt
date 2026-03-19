@@ -1,5 +1,14 @@
 — 2026-03-20 Merge branch 'master' of https://github.com/ExponentiallyDigital/QuietCraft
 
+— 2026-03-20 v0.1.0 ADD updated yml to package icon file
+    .github/workflows/release.yml | 2 insertions, 0 deletions
+    QuietCraft.toc | 1 insertion, 1 deletion
+
+— 2026-03-19 Update release_history.txt for v0.0.9
+    release_history.txt | 12 insertions, 0 deletions
+
+— 2026-03-20 Merge branch 'master' of https://github.com/ExponentiallyDigital/QuietCraft
+
 — 2026-03-20 v0.0.9 TOC bump, ADD icon and logo files
     QuietCraft.toc | 3 insertions, 2 deletions
     README.html | 255 insertions, 0 deletions
