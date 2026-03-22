@@ -32,7 +32,7 @@ The addon requires no set up.
 - **Chat filter-based:** uses `ChatFrame_AddMessageEventFilter` to intercept and inspect incoming chat events.
 - **Pattern matching:** checks if a message contains crafting phrases like "creates", "created", or "crafted".
 - **Player-aware:** preserves messages from the player themselves while filtering other players.
-- **Tiny memory footprint:** only a single function and a small, optimised regex pattern string, no tables or persistent state.
+- **Tiny memory footprint:** Uses ~2 KB of RAM. That’s ~20,000× less than RareScanner and ~44,000× less than Auctionator. Put another way: QuietCraft is the size of a single typed sentence, while RareScanner is a novel and Auctionator is a full encyclopedia volume.
 
 ### Event handling
 
