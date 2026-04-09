@@ -1,3 +1,5 @@
+2026-04-09 this addon is no longer being developed, please feel free to fork this repo and resurrect.
+
 # QuietCraft
 
 Tired of chat flooding with "So-and-so creates [Item]" from everyone around you?
